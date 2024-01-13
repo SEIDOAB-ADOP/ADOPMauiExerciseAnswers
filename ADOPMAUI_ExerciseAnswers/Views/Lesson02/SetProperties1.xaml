@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ADOPMAUI_Exercise.Views.Lesson02.SetProperties1"
+             Title="SetProperties1">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Label x:Name="lblWelcome"
+
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <BoxView x:Name="lblColorBox" HeightRequest="200" Color="Coral"/>
+            <Button Text="Next Color" Clicked="Button_Clicked"/>
+            <Button Text="Prev Color" Clicked="Button_Clicked_1"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

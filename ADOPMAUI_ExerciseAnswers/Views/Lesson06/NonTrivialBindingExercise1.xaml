@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ADOPMAUI_Exercise.Views.Lesson06.NonTrivialBindingExercise1">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" >
+            <Border Margin="5" Padding="20" Stroke="#C49B33" StrokeThickness="4" >
+                <StackLayout>
+                    <Label Text="Step1 and Step2 here"/>
+                    <StackLayout>
+                        <!-- Step 1 begin -->
+                        <Label Text="{Binding Source={x:Reference mySlider}, Path=Value}"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" />
+                        <Slider x:Name="mySlider" Minimum="0" Maximum="1" Value="0.2" />
+
+                        <Label Text="{Binding Source={x:Reference myStepper}, Path=Value}"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" />
+                        <Stepper x:Name="myStepper" Minimum="0" Maximum="10" Increment="1" Value="2" />
+                        <!-- Step 1 end -->
+
+                        <!-- Step 2 begin -->
+                        <Button Text="Set to middle" Clicked="Button_Clicked"/>
+                        <!-- Step 2 end -->
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+            <Border Margin="5" Padding="20" Stroke="#C49B33" StrokeThickness="4">
+                <StackLayout>
+                    <StackLayout>
+                        <Label Text="Step3 to Step5 here"/>
+                        <!-- Step 3 and 4 begin -->
+                        <Label Text="{Binding SliderValue}"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" />
+                        <Slider Minimum="0" Maximum="1" Value ="{Binding SliderValue}" />
+
+                        <Label Text="{Binding StepperValue}"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" />
+                        <Stepper Minimum="0" Maximum="10" Increment="1" Value ="{Binding StepperValue}" />
+                        <!-- Step 3 and 4 end -->
+
+                        <!-- Step 5 begin -->
+                        <Button Text="Check Instance Values" Clicked="Button_Clicked_2" />
+                        <Button Text="Set to middle" Clicked="Button_Clicked_1"/>
+                        <!-- Step 5 end -->
+                    </StackLayout>
+                </StackLayout>
+            </Border>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
