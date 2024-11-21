@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:consts="clr-namespace:ADOPMAUI_Exercise.Globals"
+             
+             x:Class="ADOPMAUI_Exercise.Views.Lesson02.MarkupExtension1"
+             Title="MarkupExtension1">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+            <BoxView x:Name="lblColorBox" HeightRequest="200"></BoxView>
+        <Button Text="Change Color" Clicked="Button_Clicked"></Button>
+
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="{x:Static consts:AppConstants.Idiom}">
+                        <Label.FontSize>
+                            <x:StaticExtension Member="consts:AppConstants.NormalFontSize" />
+                        </Label.FontSize>
+                    </Label>
+                    <Label FontSize="{x:Static consts:AppConstants.NormalFontSize}">
+                        <Label.Text>
+                            <x:Static Member="consts:AppConstants.Platform" />
+                        </Label.Text>
+                    </Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Button Clicked="Button_Clicked_1" Text="Button1" FontSize="{x:Static consts:AppConstants.NormalFontSize}"/>
+                    <Button Clicked="Button_Clicked_2">
+                        <Button.Text>Button2</Button.Text>
+                        <Button.FontSize>
+                            <x:Static Member="consts:AppConstants.NormalFontSize" />
+                        </Button.FontSize>
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
